@@ -4,6 +4,7 @@ import cors from 'cors';
 import { connectDB } from './config/db';
 import authRoutes from './routes/authRoutes';
 import uploadRoutes from './routes/uploadRoutes';
+import templateRoutes from './routes/templateRoutes';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ connectDB();
 
 app.use('/api/auth', authRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/templates', templateRoutes);
 
 // Test Route
 app.get('/health', (req: Request, res: Response) => {
