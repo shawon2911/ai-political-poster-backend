@@ -5,6 +5,7 @@ import { connectDB } from './config/db';
 import authRoutes from './routes/authRoutes';
 import uploadRoutes from './routes/uploadRoutes';
 import templateRoutes from './routes/templateRoutes';
+import posterRoutes from './routes/posterRoutes';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/templates', templateRoutes);
+app.use('/api/posters', posterRoutes);
 
 // Test Route
 app.get('/health', (req: Request, res: Response) => {
